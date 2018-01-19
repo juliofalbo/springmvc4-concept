@@ -6,6 +6,7 @@
 <%@ taglib uri="http://www.springframework.org/security/tags"
 	prefix="security"%>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="tags"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 <tags:pageTemplate showNav="true">
 
@@ -58,6 +59,10 @@
 	
 					<button type="submit" class="btn btn-primary">Logar</button>
 				</form:form>
+				<hr>
+				<div align="center">
+					<a href="${spring:mvcUrl('UC#form').build()}">Não sou cadastrado!</a>
+				</div>
 			</security:authorize>
 		</div>
 	</main>

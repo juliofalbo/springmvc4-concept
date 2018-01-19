@@ -5,6 +5,7 @@
 <%@ taglib uri="http://www.springframework.org/security/tags"
 	prefix="security"%>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="tags"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 <tags:pageTemplate showNav="true">
 
@@ -19,10 +20,10 @@
 		        </button>
 		      </div>
 		      <div class="modal-body">
-		        Essa aplicação foi criada com o objetivo de explorar esse tão poderoso framework que é o Spring MVC e suas melhores práticas!
+		        <fmt:message key="home.mensagem" />
 		      </div>
 		      <div class="modal-footer">
-		        <button type="button" class="btn btn-success" data-dismiss="modal">Fechar</button>
+		        <button type="button" class="btn btn-success" data-dismiss="modal"><fmt:message key="modal.fechar" /></button>
 		      </div>
 		    </div>
 		  </div>

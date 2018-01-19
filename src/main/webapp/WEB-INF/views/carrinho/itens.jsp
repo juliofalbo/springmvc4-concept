@@ -11,16 +11,16 @@
 		<tags:jumbotron subtitle="Carrinho de Compras" />
 		<div class="container">
 	
-			<div>${sucesso}</div>
-	
-			<table>
-				<tr>
-					<td>Título</td>
-					<td>Preço</td>
-					<td>Quantidade</td>
-					<td>Total</td>
-					<td>Ação</td>
-				</tr>
+			<table class="table">
+				<thead class="table-secondary">
+					<tr>
+						<th scope="col">Título</th>
+						<th scope="col">Preço</th>
+						<th scope="col">Quantidade</th>
+						<th scope="col">Total</th>
+						<th scope="col">Ação</th>
+					</tr>
+				</thead>
 				<c:forEach items="${carrinhoCompras.itens}" var="item"
 					varStatus="status">
 					<tr>
@@ -31,18 +31,19 @@
 						<td>
 							<form:form action="${spring:mvcUrl('CCC#remove').arg(0, item.produto.id).arg(1, item.tipoPreco).build()}"
 								method="POST">
-								<input type="submit" value="Excluir">
+								<input type="submit" class="btn btn-danger btn-sm" value="Excluir">
 							</form:form>
 						</td>
 					</tr>
 				</c:forEach>
 				<tr>
-					<td colspan="4">${carrinhoCompras.total}</td>
+					<td class="table-dark" colspan="3">Total</td>
+					<td colspan="2" class="table-dark"><strong>${carrinhoCompras.total}</strong></td>
 				</tr>
 				<tr>
 					<td>
 						<form:form action="${spring:mvcUrl('PC#finish').build()}" method="POST">
-							<input type="submit" value="Finalizar">
+							<input type="submit" class="btn btn-success btn-lg" value="Finalizar">
 						</form:form>
 					</td>
 				</tr>

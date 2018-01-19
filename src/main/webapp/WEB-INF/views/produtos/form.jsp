@@ -36,12 +36,12 @@
 					<form:errors path="dataLancamento" />
 				</div>
 	
-<!-- 				<div class="form-group"> -->
-<!-- 					<div class="custom-file"> -->
-<!-- 						<input type="file" class="custom-file-input" name="capa"> -->
-<!-- 						<label class="custom-file-label">Escolha um Arquivo...</label> -->
-<!-- 					</div> -->
-<!-- 				</div> -->
+				<div class="form-group">
+					<div class="custom-file">
+						<input type="file" class="custom-file-input" name="capa">
+						<label class="custom-file-label">Escolha um Arquivo...</label>
+					</div>
+				</div>
 	
 				<div class="form-group">
 					<label>Descrição</label>

@@ -39,7 +39,7 @@
     	</li>
    		<security:authorize access="!isAuthenticated()">
     		<li>
-				<a class="nav-link" href="${spring:mvcUrl('UC#form').build()}"><fmt:message key="nav.registrar" /></a>
+				<a class="nav-link" href="<c:url value="/login" />"><fmt:message key="nav.entrar" /></a>
 			</li>
 		</security:authorize>
 		<security:authorize access="isAuthenticated()">
