@@ -19,6 +19,15 @@
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
+
+
+			<!-- 
+		        Mensagem: ${exception.message}
+		        <c:forEach items="${exception.stackTrace}" var="stk">
+		            ${stk}
+		        </c:forEach>    
+		    -->
+
 		</div>
 	</div>
 	</main>
