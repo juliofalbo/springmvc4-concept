@@ -185,14 +185,17 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 	@Bean
 	public MailSender mailSender() {
 		JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
+		
 		mailSender.setHost("smtp.gmail.com");
 		mailSender.setUsername("springmvcconceptteste@gmail.com");
 		mailSender.setPassword("spring123");
 		mailSender.setPort(587);
+		mailSender.setProtocol("smtp");
 		
 		Properties mailProps = new Properties();
 		mailProps.put("mail.smtp.auth", true);
 		mailProps.put("mail.smtp.starttls.enable", true);
+		mailProps.put("mail.smtp.quitwait", false);
 		
 		mailSender.setJavaMailProperties(mailProps);
 		

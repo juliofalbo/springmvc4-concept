@@ -38,7 +38,7 @@
 	
 				<div class="form-group">
 					<div class="custom-file">
-						<input type="file" class="custom-file-input" name="capa" required>
+						<input type="file" class="custom-file-input" name="capa">
 						<label class="custom-file-label">Escolha um Arquivo...</label>
 					</div>
 				</div>
