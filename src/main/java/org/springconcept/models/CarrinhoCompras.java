@@ -90,4 +90,8 @@ public class CarrinhoCompras implements Serializable {
 		itens.remove(new CarrinhoItem(produto, tipoPreco));
 	}
 
+	public void clear() {
+		itens = new LinkedHashMap<CarrinhoItem, Integer>();
+	}
+
 }

@@ -60,9 +60,14 @@ public class PagamentoController {
 				String response = restTemplate.postForObject(uri, new DadosPagamento(carrinho.getTotal()),
 						String.class);
 
-				enviaEmailCompraProduto(usuario);
+				if (usuario != null) {
+					enviaEmailCompraProduto(usuario);
+				}
 
 				model.addFlashAttribute("sucesso", response);
+
+				carrinho.clear();
+
 				return new ModelAndView("redirect:/produtos");
 			} catch (HttpClientErrorException e) {
 				e.printStackTrace();
@@ -78,7 +83,7 @@ public class PagamentoController {
 		SimpleMailMessage email = new SimpleMailMessage();
 		email.setSubject("Compra Finalizada com Sucesso");
 		email.setTo(usuario.getEmail());
-//		email.setTo("julio.falbo.rj@gmail.com");
+		// email.setTo("julio.falbo.rj@gmail.com");
 		email.setText("Compra aprovada com sucesso no valor de " + carrinho.getTotal());
 		email.setFrom("compras@juliofalbo.tech");
 
