@@ -11,12 +11,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Profile;
 import org.springframework.core.env.Environment;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 // @Profile - Anotação responsável por informar ao Spring que quando o profile
 // de prod for utilizado, esse será o DataSource.
-//Informar ao Spring que ele será responsável por controlar as transações
-@EnableTransactionManagement
 @Profile("prod")
 public class JPAProductionConfiguration {
 
