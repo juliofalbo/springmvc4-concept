@@ -56,13 +56,13 @@ public class ServletSpringMVC extends AbstractAnnotationConfigDispatcherServletI
 
 	// Configuração responsável por informar ao Spring algo que será executado ao
 	// inciar a aplicação
-//	@Override
-//	public void onStartup(ServletContext servletContext) throws ServletException {
-//		super.onStartup(servletContext);
-//		// Informando ao Spring que o profile a ser utilizado quando a aplicação subir é
-//		// o dev
-//		servletContext.addListener(RequestContextListener.class);
-//		servletContext.setInitParameter("spring.profiles.active", "dev");
-//	}
+	@Override
+	public void onStartup(ServletContext servletContext) throws ServletException {
+		super.onStartup(servletContext);
+		// Informando ao Spring que o profile a ser utilizado quando a aplicação subir é
+		// o dev
+		servletContext.addListener(RequestContextListener.class);
+		servletContext.setInitParameter("spring.profiles.active", "dev");
+	}
 
 }
